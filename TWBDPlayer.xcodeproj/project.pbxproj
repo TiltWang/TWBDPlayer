@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A584606421C1FC6B00E8B8D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A584606321C1FC6B00E8B8D4 /* AppDelegate.m */; };
+		A584606721C1FC6B00E8B8D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A584606621C1FC6B00E8B8D4 /* ViewController.m */; };
+		A584606A21C1FC6B00E8B8D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A584606821C1FC6B00E8B8D4 /* Main.storyboard */; };
+		A584606C21C1FC6C00E8B8D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A584606B21C1FC6C00E8B8D4 /* Assets.xcassets */; };
+		A584606F21C1FC6C00E8B8D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A584606D21C1FC6C00E8B8D4 /* LaunchScreen.storyboard */; };
+		A584607221C1FC6C00E8B8D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A584607121C1FC6C00E8B8D4 /* main.m */; };
+		A584608621C1FDC800E8B8D4 /* TWBDPlayerFiles.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A584607921C1FDC800E8B8D4 /* TWBDPlayerFiles.bundle */; };
+		A584608721C1FDC800E8B8D4 /* TWBDPlayerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A584607C21C1FDC800E8B8D4 /* TWBDPlayerConfig.m */; };
+		A584608821C1FDC800E8B8D4 /* NSBundle+BDBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A584607D21C1FDC800E8B8D4 /* NSBundle+BDBundle.m */; };
+		A584608921C1FDC800E8B8D4 /* UIImage+BDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A584607E21C1FDC800E8B8D4 /* UIImage+BDImage.m */; };
+		A584608A21C1FDC800E8B8D4 /* TWBDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A584608221C1FDC800E8B8D4 /* TWBDMenuView.m */; };
+		A584608B21C1FDC800E8B8D4 /* TWBDPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A584608521C1FDC800E8B8D4 /* TWBDPlayerView.m */; };
+		CA444A72AA47018F0EF42AE2 /* libPods-TWBDPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18210B916219F59088B1832 /* libPods-TWBDPlayer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7EAC0474A83A518CD1C8E836 /* Pods-TWBDPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWBDPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWBDPlayer/Pods-TWBDPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		7EAFCC30F1FB55FA2DAF2EB5 /* Pods-TWBDPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWBDPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWBDPlayer/Pods-TWBDPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		A584605F21C1FC6B00E8B8D4 /* TWBDPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBDPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A584606221C1FC6B00E8B8D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A584606321C1FC6B00E8B8D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A584606521C1FC6B00E8B8D4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A584606621C1FC6B00E8B8D4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A584606921C1FC6B00E8B8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A584606B21C1FC6C00E8B8D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A584606E21C1FC6C00E8B8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A584607021C1FC6C00E8B8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A584607121C1FC6C00E8B8D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A584607921C1FDC800E8B8D4 /* TWBDPlayerFiles.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TWBDPlayerFiles.bundle; sourceTree = "<group>"; };
+		A584607B21C1FDC800E8B8D4 /* UIImage+BDImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BDImage.h"; sourceTree = "<group>"; };
+		A584607C21C1FDC800E8B8D4 /* TWBDPlayerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBDPlayerConfig.m; sourceTree = "<group>"; };
+		A584607D21C1FDC800E8B8D4 /* NSBundle+BDBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+BDBundle.m"; sourceTree = "<group>"; };
+		A584607E21C1FDC800E8B8D4 /* UIImage+BDImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BDImage.m"; sourceTree = "<group>"; };
+		A584607F21C1FDC800E8B8D4 /* NSBundle+BDBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BDBundle.h"; sourceTree = "<group>"; };
+		A584608021C1FDC800E8B8D4 /* TWBDPlayerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBDPlayerConfig.h; sourceTree = "<group>"; };
+		A584608221C1FDC800E8B8D4 /* TWBDMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBDMenuView.m; sourceTree = "<group>"; };
+		A584608321C1FDC800E8B8D4 /* TWBDPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBDPlayerView.h; sourceTree = "<group>"; };
+		A584608421C1FDC800E8B8D4 /* TWBDMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBDMenuView.h; sourceTree = "<group>"; };
+		A584608521C1FDC800E8B8D4 /* TWBDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBDPlayerView.m; sourceTree = "<group>"; };
+		D18210B916219F59088B1832 /* libPods-TWBDPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWBDPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A584605C21C1FC6B00E8B8D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA444A72AA47018F0EF42AE2 /* libPods-TWBDPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A02AB45C5DC691A83A59AFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EAC0474A83A518CD1C8E836 /* Pods-TWBDPlayer.debug.xcconfig */,
+				7EAFCC30F1FB55FA2DAF2EB5 /* Pods-TWBDPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A584605621C1FC6B00E8B8D4 = {
+			isa = PBXGroup;
+			children = (
+				A584606121C1FC6B00E8B8D4 /* TWBDPlayer */,
+				A584606021C1FC6B00E8B8D4 /* Products */,
+				7A02AB45C5DC691A83A59AFE /* Pods */,
+				DE83399D36F0E0AA8C8C6D78 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A584606021C1FC6B00E8B8D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A584605F21C1FC6B00E8B8D4 /* TWBDPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A584606121C1FC6B00E8B8D4 /* TWBDPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A584606221C1FC6B00E8B8D4 /* AppDelegate.h */,
+				A584606321C1FC6B00E8B8D4 /* AppDelegate.m */,
+				A584606B21C1FC6C00E8B8D4 /* Assets.xcassets */,
+				A584607821C1FDC800E8B8D4 /* Classes */,
+				A584607021C1FC6C00E8B8D4 /* Info.plist */,
+				A584606D21C1FC6C00E8B8D4 /* LaunchScreen.storyboard */,
+				A584607121C1FC6C00E8B8D4 /* main.m */,
+				A584606821C1FC6B00E8B8D4 /* Main.storyboard */,
+				A584606521C1FC6B00E8B8D4 /* ViewController.h */,
+				A584606621C1FC6B00E8B8D4 /* ViewController.m */,
+			);
+			path = TWBDPlayer;
+			sourceTree = "<group>";
+		};
+		A584607821C1FDC800E8B8D4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A584607921C1FDC800E8B8D4 /* TWBDPlayerFiles.bundle */,
+				A584607A21C1FDC800E8B8D4 /* Common */,
+				A584608121C1FDC800E8B8D4 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A584607A21C1FDC800E8B8D4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A584607F21C1FDC800E8B8D4 /* NSBundle+BDBundle.h */,
+				A584607D21C1FDC800E8B8D4 /* NSBundle+BDBundle.m */,
+				A584608021C1FDC800E8B8D4 /* TWBDPlayerConfig.h */,
+				A584607C21C1FDC800E8B8D4 /* TWBDPlayerConfig.m */,
+				A584607B21C1FDC800E8B8D4 /* UIImage+BDImage.h */,
+				A584607E21C1FDC800E8B8D4 /* UIImage+BDImage.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A584608121C1FDC800E8B8D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A584608421C1FDC800E8B8D4 /* TWBDMenuView.h */,
+				A584608221C1FDC800E8B8D4 /* TWBDMenuView.m */,
+				A584608321C1FDC800E8B8D4 /* TWBDPlayerView.h */,
+				A584608521C1FDC800E8B8D4 /* TWBDPlayerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE83399D36F0E0AA8C8C6D78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D18210B916219F59088B1832 /* libPods-TWBDPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A584605E21C1FC6B00E8B8D4 /* TWBDPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A584607521C1FC6C00E8B8D4 /* Build configuration list for PBXNativeTarget "TWBDPlayer" */;
+			buildPhases = (
+				6E0D96AE386FB46B440A6DC7 /* [CP] Check Pods Manifest.lock */,
+				A584605B21C1FC6B00E8B8D4 /* Sources */,
+				A584605C21C1FC6B00E8B8D4 /* Frameworks */,
+				A584605D21C1FC6B00E8B8D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TWBDPlayer;
+			productName = TWBDPlayer;
+			productReference = A584605F21C1FC6B00E8B8D4 /* TWBDPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A584605721C1FC6B00E8B8D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = tilt;
+				TargetAttributes = {
+					A584605E21C1FC6B00E8B8D4 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = A584605A21C1FC6B00E8B8D4 /* Build configuration list for PBXProject "TWBDPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A584605621C1FC6B00E8B8D4;
+			productRefGroup = A584606021C1FC6B00E8B8D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A584605E21C1FC6B00E8B8D4 /* TWBDPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A584605D21C1FC6B00E8B8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A584606F21C1FC6C00E8B8D4 /* LaunchScreen.storyboard in Resources */,
+				A584606C21C1FC6C00E8B8D4 /* Assets.xcassets in Resources */,
+				A584606A21C1FC6B00E8B8D4 /* Main.storyboard in Resources */,
+				A584608621C1FDC800E8B8D4 /* TWBDPlayerFiles.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E0D96AE386FB46B440A6DC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TWBDPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A584605B21C1FC6B00E8B8D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A584608A21C1FDC800E8B8D4 /* TWBDMenuView.m in Sources */,
+				A584606721C1FC6B00E8B8D4 /* ViewController.m in Sources */,
+				A584608721C1FDC800E8B8D4 /* TWBDPlayerConfig.m in Sources */,
+				A584607221C1FC6C00E8B8D4 /* main.m in Sources */,
+				A584608B21C1FDC800E8B8D4 /* TWBDPlayerView.m in Sources */,
+				A584608921C1FDC800E8B8D4 /* UIImage+BDImage.m in Sources */,
+				A584608821C1FDC800E8B8D4 /* NSBundle+BDBundle.m in Sources */,
+				A584606421C1FC6B00E8B8D4 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A584606821C1FC6B00E8B8D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A584606921C1FC6B00E8B8D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A584606D21C1FC6C00E8B8D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A584606E21C1FC6C00E8B8D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A584607321C1FC6C00E8B8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A584607421C1FC6C00E8B8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A584607621C1FC6C00E8B8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAC0474A83A518CD1C8E836 /* Pods-TWBDPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49V4SD84YG;
+				INFOPLIST_FILE = TWBDPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tilt.com.TWBDPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A584607721C1FC6C00E8B8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAFCC30F1FB55FA2DAF2EB5 /* Pods-TWBDPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 49V4SD84YG;
+				INFOPLIST_FILE = TWBDPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tilt.com.TWBDPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A584605A21C1FC6B00E8B8D4 /* Build configuration list for PBXProject "TWBDPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A584607321C1FC6C00E8B8D4 /* Debug */,
+				A584607421C1FC6C00E8B8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A584607521C1FC6C00E8B8D4 /* Build configuration list for PBXNativeTarget "TWBDPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A584607621C1FC6C00E8B8D4 /* Debug */,
+				A584607721C1FC6C00E8B8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A584605721C1FC6B00E8B8D4 /* Project object */;
+}
