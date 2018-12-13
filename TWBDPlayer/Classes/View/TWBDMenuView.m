@@ -142,6 +142,9 @@ static CGFloat bottomHeight = 40.0;
     [self fullScreenBtnClick:self.fullScreenBtn];
     [self restartTimer];
 }
+- (void)pause {
+    self.playBtn.selected = NO;
+}
 
 #pragma mark - Life Cycle
 - (instancetype)initWithFrame:(CGRect)frame
@@ -157,6 +160,9 @@ static CGFloat bottomHeight = 40.0;
     return self;
 }
 
+- (void)removeFromSuperview {
+    [self stopTimer];
+}
 
 - (void)dealloc {
 //    NSLog(@"%@ dealloc", [self class]);

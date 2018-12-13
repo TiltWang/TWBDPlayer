@@ -29,4 +29,6 @@
 - (void)startWithVideoUrlStr:(NSString *)videoUrlStr;
 ///设置了videoUrlStr 可使用此方法
 - (void)start;
+- (void)stop;
+- (void)pause;
 @end

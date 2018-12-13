@@ -19,6 +19,7 @@
 		A584608921C1FDC800E8B8D4 /* UIImage+BDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A584607E21C1FDC800E8B8D4 /* UIImage+BDImage.m */; };
 		A584608A21C1FDC800E8B8D4 /* TWBDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A584608221C1FDC800E8B8D4 /* TWBDMenuView.m */; };
 		A584608B21C1FDC800E8B8D4 /* TWBDPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A584608521C1FDC800E8B8D4 /* TWBDPlayerView.m */; };
+		A584608E21C20BC300E8B8D4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A584608D21C20BC300E8B8D4 /* TestViewController.m */; };
 		CA444A72AA47018F0EF42AE2 /* libPods-TWBDPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18210B916219F59088B1832 /* libPods-TWBDPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		A584608321C1FDC800E8B8D4 /* TWBDPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBDPlayerView.h; sourceTree = "<group>"; };
 		A584608421C1FDC800E8B8D4 /* TWBDMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBDMenuView.h; sourceTree = "<group>"; };
 		A584608521C1FDC800E8B8D4 /* TWBDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBDPlayerView.m; sourceTree = "<group>"; };
+		A584608C21C20BC300E8B8D4 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		A584608D21C20BC300E8B8D4 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		D18210B916219F59088B1832 /* libPods-TWBDPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWBDPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +104,8 @@
 				A584606821C1FC6B00E8B8D4 /* Main.storyboard */,
 				A584606521C1FC6B00E8B8D4 /* ViewController.h */,
 				A584606621C1FC6B00E8B8D4 /* ViewController.m */,
+				A584608C21C20BC300E8B8D4 /* TestViewController.h */,
+				A584608D21C20BC300E8B8D4 /* TestViewController.m */,
 			);
 			path = TWBDPlayer;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				A584607221C1FC6C00E8B8D4 /* main.m in Sources */,
 				A584608B21C1FDC800E8B8D4 /* TWBDPlayerView.m in Sources */,
 				A584608921C1FDC800E8B8D4 /* UIImage+BDImage.m in Sources */,
+				A584608E21C20BC300E8B8D4 /* TestViewController.m in Sources */,
 				A584608821C1FDC800E8B8D4 /* NSBundle+BDBundle.m in Sources */,
 				A584606421C1FC6B00E8B8D4 /* AppDelegate.m in Sources */,
 			);

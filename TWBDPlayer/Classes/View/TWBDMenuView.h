@@ -30,4 +30,6 @@
 @property (nonatomic, copy) void(^sliderFinishedBlock)(float value);
 ///slider开始按钮的block
 @property (nonatomic, copy) void(^sliderBeginChangeBlock)(void);
+
+- (void)pause;
 @end

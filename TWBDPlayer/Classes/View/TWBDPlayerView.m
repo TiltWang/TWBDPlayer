@@ -14,13 +14,31 @@
 
 @interface TWBDPlayerView ()
 @property (nonatomic, strong) BDCloudMediaPlayerController *player;
+
 @property (nonatomic, strong) TWBDMenuView *menuView;
 
 @property (nonatomic, weak) NSTimer *timer;
+
+@property (nonatomic, assign) BOOL becomeAvtiveNeedPlay;
 @end
 
 @implementation TWBDPlayerView
 
+#pragma mark - Action
+
+- (void)playBtnAction:(BOOL)isPlaying {
+    if (isPlaying) {
+        if (self.player.loadState == BDCloudMediaPlayerLoadStateUnknown) {
+            [self start];
+        } else {
+            [self.player play];
+            [self restartTimer];
+        }
+    } else {
+        [self.player pause];
+        [self stopTimer];
+    }
+}
 
 - (void)restartTimer {
     [self stopTimer];
@@ -36,6 +54,44 @@
     _timer = nil;
 }
 
+- (void)stop {
+    [self.player stop];
+}
+- (void)pause {
+    [self.player pause];
+    [self.menuView pause];
+}
+
+- (void)startWithVideoUrlStr:(NSString *)videoUrlStr {
+    self.videoUrlStr = videoUrlStr;
+    [self.player stop];
+    [self.player reset];
+    self.player.contentString = videoUrlStr;
+    [self.player prepareToPlay];
+    [self timer];
+}
+- (void)start {
+    [self startWithVideoUrlStr:self.videoUrlStr];
+}
+
+#pragma mark - NSNotification
+
+- (void)appDidEnterBackgroundNotify:(NSNotification *)notify {
+    if ([self.player isPlaying]) {
+        [self.player pause];
+        self.becomeAvtiveNeedPlay = YES;
+    }
+}
+
+- (void)appDidBecomeActiveNotify:(NSNotification *)notify {
+    if (self.becomeAvtiveNeedPlay) {
+        [self.player play];
+        self.becomeAvtiveNeedPlay = NO;
+    }
+}
+
+#pragma mark - Life Cycle
+
 + (instancetype)playerWithFrame:(CGRect)frame withVideoUrlStr:(NSString *)videoUrlStr {
     TWBDPlayerView *playerView = [[TWBDPlayerView alloc] initWithFrame:frame];
     playerView.videoUrlStr = videoUrlStr;
@@ -47,6 +103,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupUI];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActiveNotify:) name:UIApplicationDidBecomeActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackgroundNotify:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     }
     return self;
 }
@@ -56,9 +114,18 @@
     self.menuView.frame = self.bounds;
 }
 
-- (void)dealloc {
-    //    NSLog(@"%@ dealloc", [self class]);
+- (void)removeFromSuperview {
     [self stopTimer];
+    [self.player stop];
+    [self.player.view removeFromSuperview];
+    [self.menuView removeFromSuperview];
+}
+
+- (void)dealloc {
+//    NSLog(@"%@ dealloc", [self class]);
+    [self stopTimer];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)setupUI {
@@ -73,17 +140,7 @@
     [self addSubview:self.menuView];
 }
 
-- (void)startWithVideoUrlStr:(NSString *)videoUrlStr {
-    self.videoUrlStr = videoUrlStr;
-    [self.player stop];
-    [self.player reset];
-    self.player.contentString = videoUrlStr;
-    [self.player prepareToPlay];
-    [self timer];
-}
-- (void)start {
-    [self startWithVideoUrlStr:self.videoUrlStr];
-}
+#pragma mark - Getter
 
 - (UIImageView *)bgImgView {
     if (!_bgImgView) {
@@ -135,23 +192,11 @@
     return _timer;
 }
 
+#pragma mark - Setter
+
 - (void)setTitleStr:(NSString *)titleStr {
     _titleStr = titleStr;
     self.menuView.titleStr = titleStr;
-}
-
-- (void)playBtnAction:(BOOL)isPlaying {
-    if (isPlaying) {
-        if (self.player.loadState == BDCloudMediaPlayerLoadStateUnknown) {
-            [self start];
-        } else {
-            [self.player play];
-            [self restartTimer];
-        }
-    } else {
-        [self.player pause];
-         [self stopTimer];
-    }
 }
 
 - (void)setIsFullScreen:(BOOL)isFullScreen {
