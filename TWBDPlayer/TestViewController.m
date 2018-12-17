@@ -25,9 +25,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [TWBDPlayerConfig sharedInstance].sliderTinColor = [UIColor greenColor];
-    [TWBDPlayerConfig sharedInstance].hideLockBtn = YES;
-    [TWBDPlayerConfig sharedInstance].hideFullScreenBtn = YES;
-    [TWBDPlayerConfig sharedInstance].hideSpeedBtn = YES;
+//    [TWBDPlayerConfig sharedInstance].hideLockBtn = YES;
+//    [TWBDPlayerConfig sharedInstance].hideFullScreenBtn = YES;
+//    [TWBDPlayerConfig sharedInstance].hideSpeedBtn = YES;
     
     self.playerView = [TWBDPlayerView playerWithFrame:CGRectMake(0, 88, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 9 / 16.0) withVideoUrlStr:@"http://tb-video.bdstatic.com/tieba-smallvideo/45_a68a54ff67c9db5bb05748e14c600a3b.mp4"];
     self.playerView.titleStr = @"test标题";
@@ -36,7 +36,29 @@
         TWLog(@"结束");
         [weakSelf dismissViewControllerAnimated:YES completion:nil];
     };
+    self.playerView.lockBtnBlock = ^(BOOL isLocked) {
+        TWLog(@"锁屏:%@", isLocked? @"YES": @"NO");
+    };
+    self.playerView.fullScreenBtnBlock = ^(BOOL isFullScreen) {
+        TWLog(@"全屏:%@", isFullScreen? @"YES": @"NO");
+        if (isFullScreen) {
+            [weakSelf orientationToPortrait:UIInterfaceOrientationPortrait];
+        } else {
+            [weakSelf orientationToPortrait:UIInterfaceOrientationLandscapeRight];
+        }
+    };
     [self.view addSubview:self.playerView];
+}
+
+// 防止更改设备的横竖屏不起作用
+- (void)orientationToPortrait:(UIInterfaceOrientation)orientation {
+    SEL seletor = NSSelectorFromString(@"setOrientation:");
+    NSInvocation *invocatino = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:seletor]];
+    [invocatino setSelector:seletor];
+    [invocatino setTarget:[UIDevice currentDevice]];
+    int val = orientation;
+    [invocatino setArgument:&val atIndex:2];
+    [invocatino invoke];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

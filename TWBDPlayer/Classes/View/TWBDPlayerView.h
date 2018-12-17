@@ -24,6 +24,8 @@
 @property (nonatomic, copy) void(^closeBtnBlock)(void);
 ///全屏按钮的block
 @property (nonatomic, copy) void(^fullScreenBtnBlock)(BOOL isFullScreen);
+///锁屏按钮的block
+@property (nonatomic, copy) void(^lockBtnBlock)(BOOL isLocked);
 
 ///未设置了videoUrlStr 可使用此方法
 - (void)startWithVideoUrlStr:(NSString *)videoUrlStr;

@@ -45,23 +45,33 @@ static CGFloat bottomHeight = 40.0;
 
 #pragma mark - Action
 - (void)backBtnClick:(UIButton *)btn {
+    [self stopTimer];
     if ([TWBDPlayerConfig sharedInstance].hideFullScreenBtn) {
         if (_closeBtnBlock) {
             _closeBtnBlock();
         }
     } else {
         if (self.isFullScreen) {
-            self.isFullScreen = NO;
+//            self.isFullScreen = NO;
+            if (_fullScreenBtnBlock) {
+                _fullScreenBtnBlock(self.fullScreenBtn.selected);
+            }
         } else {
             if (_closeBtnBlock) {
                 _closeBtnBlock();
             }
         }
     }
+    [self timer];
 }
 - (void)lockBtnClick:(UIButton *)btn {
+    [self stopTimer];
     btn.selected = !btn.selected;
     self.isLocked = btn.selected;
+    if (_lockBtnBlock) {
+        _lockBtnBlock(btn.selected);
+    }
+    [self timer];
 }
 
 - (void)speedBtnClick:(UIButton *)btn {
@@ -74,15 +84,19 @@ static CGFloat bottomHeight = 40.0;
 }
 
 - (void)playBtnClick:(UIButton *)btn {
+    [self stopTimer];
     btn.selected = !btn.selected;
     if (_playBtnBlock) {
         _playBtnBlock(btn.selected);
     }
+    [self timer];
 }
 - (void)fullScreenBtnClick:(UIButton *)btn {
+    [self stopTimer];
     if (_fullScreenBtnBlock) {
         _fullScreenBtnBlock(btn.selected);
     }
+    [self timer];
 }
 - (void)sliderFinishAction:(UISlider *)slider {
     [self timer];

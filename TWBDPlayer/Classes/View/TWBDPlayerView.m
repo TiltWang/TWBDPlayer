@@ -180,6 +180,11 @@
                 weakSelf.fullScreenBtnBlock(isFullScreen);
             }
         };
+        _menuView.lockBtnBlock = ^(BOOL isLocked) {
+            if (weakSelf.lockBtnBlock) {
+                weakSelf.lockBtnBlock(isLocked);
+            }
+        };
     }
     return _menuView;
 }
