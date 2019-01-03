@@ -18,6 +18,11 @@
 
 @property (nonatomic, assign) BOOL isFullScreen;
 
+@property (nonatomic, assign) BOOL isPlaying;
+
+///是否已准备播放
+@property (nonatomic, assign) BOOL isReadyToPlay;
+
 ///全屏按钮的block
 @property (nonatomic, copy) void(^fullScreenBtnBlock)(BOOL isFullScreen);
 ///结束按钮的block

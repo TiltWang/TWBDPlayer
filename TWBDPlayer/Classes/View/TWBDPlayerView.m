@@ -11,6 +11,7 @@
 #import "UIImage+BDImage.h"
 #import "TWBDMenuView.h"
 #import "TWBDPlayerConfig.h"
+#import <TWBaseTool.h>
 
 @interface TWBDPlayerView ()
 @property (nonatomic, strong) BDCloudMediaPlayerController *player;
@@ -69,6 +70,7 @@
     self.player.contentString = videoUrlStr;
     [self.player prepareToPlay];
     [self timer];
+    self.menuView.isPlaying= YES;
 }
 - (void)start {
     [self startWithVideoUrlStr:self.videoUrlStr];
@@ -207,6 +209,15 @@
 - (void)setIsFullScreen:(BOOL)isFullScreen {
     _isFullScreen = isFullScreen;
     self.menuView.isFullScreen = isFullScreen;
+}
+
+- (void)setVideoUrlStr:(NSString *)videoUrlStr {
+    _videoUrlStr = videoUrlStr;
+    if (!IsNilOrNull(videoUrlStr) && videoUrlStr.length > 0) {
+        self.menuView.isReadyToPlay = YES;
+    } else {
+        self.menuView.isReadyToPlay = NO;
+    }
 }
 
 

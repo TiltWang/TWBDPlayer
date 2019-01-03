@@ -29,7 +29,8 @@
 //    [TWBDPlayerConfig sharedInstance].hideFullScreenBtn = YES;
 //    [TWBDPlayerConfig sharedInstance].hideSpeedBtn = YES;
     
-    self.playerView = [TWBDPlayerView playerWithFrame:CGRectMake(0, 88, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 9 / 16.0) withVideoUrlStr:@"http://tb-video.bdstatic.com/tieba-smallvideo/45_a68a54ff67c9db5bb05748e14c600a3b.mp4"];
+//    self.playerView = [TWBDPlayerView playerWithFrame:CGRectMake(0, 88, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 9 / 16.0) withVideoUrlStr:@"http://tb-video.bdstatic.com/tieba-smallvideo/45_a68a54ff67c9db5bb05748e14c600a3b.mp4"];
+    self.playerView = [[TWBDPlayerView alloc] initWithFrame:CGRectMake(0, 88, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 9 / 16.0)];
     self.playerView.titleStr = @"test标题";
     __weak typeof(self) weakSelf = self;
     self.playerView.closeBtnBlock = ^{

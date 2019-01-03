@@ -169,6 +169,7 @@ static CGFloat bottomHeight = 40.0;
         _isShowMenu = YES;
         _currentSpeedLevel = 0;
         [self setupUI];
+        self.isReadyToPlay = NO;
         [self timer];
     }
     return self;
@@ -498,6 +499,18 @@ static CGFloat bottomHeight = 40.0;
 - (void)setIsFullScreen:(BOOL)isFullScreen {
     _isFullScreen = isFullScreen;
     self.fullScreenBtn.selected = isFullScreen;
+}
+
+- (void)setIsPlaying:(BOOL)isPlaying {
+    _isPlaying = isPlaying;
+    self.playBtn.selected = isPlaying;
+}
+
+- (void)setIsReadyToPlay:(BOOL)isReadyToPlay {
+    _isReadyToPlay = isReadyToPlay;
+    self.bottomContrainerView.hidden = !isReadyToPlay;
+    self.speedBtn.enabled = isReadyToPlay;
+    
 }
 
 @end
