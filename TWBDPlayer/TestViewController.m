@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [TWBDPlayerConfig sharedInstance].sliderTinColor = [UIColor greenColor];
+    [TWBDPlayerConfig sharedInstance].sliderTinColor = [UIColor orangeColor];
 //    [TWBDPlayerConfig sharedInstance].hideLockBtn = YES;
 //    [TWBDPlayerConfig sharedInstance].hideFullScreenBtn = YES;
 //    [TWBDPlayerConfig sharedInstance].hideSpeedBtn = YES;

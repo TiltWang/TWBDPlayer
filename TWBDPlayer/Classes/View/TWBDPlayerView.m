@@ -12,6 +12,7 @@
 #import "TWBDMenuView.h"
 #import "TWBDPlayerConfig.h"
 #import <TWBaseTool.h>
+#import <TWLoadingView.h>
 
 @interface TWBDPlayerView ()
 @property (nonatomic, strong) BDCloudMediaPlayerController *player;
@@ -21,6 +22,10 @@
 @property (nonatomic, weak) NSTimer *timer;
 
 @property (nonatomic, assign) BOOL becomeAvtiveNeedPlay;
+
+@property (nonatomic, strong) TWLoadingView *loadingView;
+
+@property (nonatomic, assign) BOOL isDisplayedLoadingView;
 @end
 
 @implementation TWBDPlayerView
@@ -71,9 +76,25 @@
     [self.player prepareToPlay];
     [self timer];
     self.menuView.isPlaying= YES;
+    
+    [self showLoading];
 }
 - (void)start {
     [self startWithVideoUrlStr:self.videoUrlStr];
+}
+
+- (void)showLoading {
+    if (self.isDisplayedLoadingView) {
+        return;
+    }
+    [self addSubview:self.loadingView];
+    self.isDisplayedLoadingView = YES;
+}
+- (void)hideLoading {
+    if (self.isDisplayedLoadingView) {
+        [self.loadingView removeFromSuperview];
+        self.isDisplayedLoadingView = NO;
+    }
 }
 
 #pragma mark - NSNotification
@@ -92,6 +113,18 @@
     }
 }
 
+- (void)playerBufferingStart:(NSNotification *)notify {
+    [self showLoading];
+}
+
+- (void)playerPlaybackIsPrepared:(NSNotification *)notify {
+    [self hideLoading];
+}
+
+- (void)playerBufferingEnd:(NSNotification *)notify {
+    [self hideLoading];
+}
+
 #pragma mark - Life Cycle
 
 + (instancetype)playerWithFrame:(CGRect)frame withVideoUrlStr:(NSString *)videoUrlStr {
@@ -107,6 +140,10 @@
         [self setupUI];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActiveNotify:) name:UIApplicationDidBecomeActiveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackgroundNotify:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerBufferingStart:) name:BDCloudMediaPlayerBufferingStartNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerPlaybackIsPrepared:) name:BDCloudMediaPlayerPlaybackIsPreparedToPlayNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerBufferingEnd:) name:BDCloudMediaPlayerBufferingEndNotification object:nil];
+        
     }
     return self;
 }
@@ -114,6 +151,7 @@
     self.bgImgView.frame =self.bounds;
     self.player.view.frame = self.bounds;
     self.menuView.frame = self.bounds;
+    self.loadingView.frame = self.bounds;
 }
 
 - (void)removeFromSuperview {
@@ -128,6 +166,9 @@
     [self stopTimer];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BDCloudMediaPlayerBufferingStartNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BDCloudMediaPlayerPlaybackIsPreparedToPlayNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BDCloudMediaPlayerBufferingEndNotification object:nil];
 }
 
 - (void)setupUI {
@@ -197,6 +238,15 @@
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     }
     return _timer;
+}
+
+- (TWLoadingView *)loadingView {
+    if (!_loadingView) {
+        _loadingView = [TWLoadingView loadingViewWithFrame:self.bounds circleBgColor:HEXACOLOR(0xffffff, 0.5) circleColor:[TWBDPlayerConfig sharedInstance].sliderTinColor circleSideColor:nil circleWidth:50.0 circleBorderWidth:2 withTipText:nil tipFont:nil tipColor:nil];
+//        _loadingView = [TWLoadingView loadingViewWithFrame:self.bounds circleColor:[TWBDPlayerConfig sharedInstance].sliderTinColor circleWidth:30.0 circleBorderWidth:2 withTipText:@"" tipFont:[UIFont systemFontOfSize:12.0] tipColor:HEXCOLOR(0x666666)];
+        self.isDisplayedLoadingView = NO;
+    }
+    return _loadingView;
 }
 
 #pragma mark - Setter

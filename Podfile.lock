@@ -3,7 +3,7 @@ PODS:
     - openssl-ios-bitcode (~> 1.0.210)
   - Masonry (1.1.0)
   - openssl-ios-bitcode (1.0.216)
-  - TWBaseTool (0.0.6)
+  - TWBaseTool (0.1.3)
 
 DEPENDENCIES:
   - BaiduBCEPlayerFull (~> 2.2.4)
@@ -21,7 +21,7 @@ SPEC CHECKSUMS:
   BaiduBCEPlayerFull: d9be762969a912b14db39e65426f52c0929cbc56
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   openssl-ios-bitcode: b46298bcbc3e218fe13e376142af616850a36f7d
-  TWBaseTool: 5df9fd05eaf3960b9e88e1230b1c2cafa12e817e
+  TWBaseTool: 9e8b69d0090e074c315d472b3d047dd68e32ba33
 
 PODFILE CHECKSUM: 5c653817e2da397e217eff03af485e4946c26a52
 

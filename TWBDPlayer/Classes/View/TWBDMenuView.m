@@ -468,7 +468,7 @@ static CGFloat bottomHeight = 40.0;
     _currentTime = currentTime;
     self.currentLbl.text = [self timeStrFormat:(NSInteger)currentTime];
     if (self.totalTime > 0.1f) {
-        self.slider.value = (NSInteger)currentTime;// / self.totalTime;
+        self.slider.value = (NSInteger)currentTime;// self.totalTime;
     }
 }
 - (void)setTotalTime:(NSTimeInterval)totalTime {
@@ -509,8 +509,8 @@ static CGFloat bottomHeight = 40.0;
 - (void)setIsReadyToPlay:(BOOL)isReadyToPlay {
     _isReadyToPlay = isReadyToPlay;
     self.bottomContrainerView.hidden = !isReadyToPlay;
-    self.speedBtn.enabled = isReadyToPlay;
-    
+    self.speedBtn.hidden = !isReadyToPlay;
+    self.lockBtn.hidden = !isReadyToPlay;
 }
 
 @end
