@@ -54,5 +54,19 @@ static TWBDPlayerConfig *_instance=nil;
     }
 }
 
+- (UIColor *)themeColor {
+    if (!_themeColor) {
+        _themeColor = [UIColor whiteColor];
+    }
+    return _themeColor;
+}
+
+- (NSArray *)speedArr {
+    if (!_speedArr) {
+        _speedArr = @[@"1.0X", @"1.2X", @"1.4X", @"1.6X", @"1.8X", @"2.0X"];
+    }
+    return _speedArr;
+}
+
 
 @end

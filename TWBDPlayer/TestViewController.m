@@ -24,7 +24,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [TWBDPlayerConfig sharedInstance].sliderTinColor = [UIColor orangeColor];
+//    [TWBDPlayerConfig sharedInstance].themeColor = [UIColor redColor];
+//    [TWBDPlayerConfig sharedInstance].sliderTinColor = [UIColor orangeColor];
 //    [TWBDPlayerConfig sharedInstance].hideLockBtn = YES;
 //    [TWBDPlayerConfig sharedInstance].hideFullScreenBtn = YES;
 //    [TWBDPlayerConfig sharedInstance].hideSpeedBtn = YES;
@@ -67,7 +68,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.playerView startWithVideoUrlStr:@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4"];
+//    [self.playerView startWithVideoUrlStr:@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4"];
+    [self.playerView startWithVideoUrlStr:@"http://gcik47gyt746q6nqdze.exp.bcevod.com/mda-havrb00n501d5ndt/mda-havrb00n501d5ndt.m3u8"];
     self.playerView.titleStr = @"testNew标题";
 }
 

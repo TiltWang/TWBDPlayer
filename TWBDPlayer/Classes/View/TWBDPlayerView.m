@@ -12,7 +12,7 @@
 #import "TWBDMenuView.h"
 #import "TWBDPlayerConfig.h"
 #import <TWBaseTool.h>
-#import <TWLoadingView.h>
+#import "TWBDPlayerLoadingView.h"
 
 @interface TWBDPlayerView ()
 @property (nonatomic, strong) BDCloudMediaPlayerController *player;
@@ -23,7 +23,7 @@
 
 @property (nonatomic, assign) BOOL becomeAvtiveNeedPlay;
 
-@property (nonatomic, strong) TWLoadingView *loadingView;
+@property (nonatomic, strong) TWBDPlayerLoadingView *loadingView;
 
 @property (nonatomic, assign) BOOL isDisplayedLoadingView;
 @end
@@ -240,10 +240,12 @@
     return _timer;
 }
 
-- (TWLoadingView *)loadingView {
+- (TWBDPlayerLoadingView *)loadingView {
     if (!_loadingView) {
-        _loadingView = [TWLoadingView loadingViewWithFrame:self.bounds circleBgColor:HEXACOLOR(0xffffff, 0.5) circleColor:[TWBDPlayerConfig sharedInstance].sliderTinColor circleSideColor:nil circleWidth:50.0 circleBorderWidth:2 withTipText:nil tipFont:nil tipColor:nil];
-//        _loadingView = [TWLoadingView loadingViewWithFrame:self.bounds circleColor:[TWBDPlayerConfig sharedInstance].sliderTinColor circleWidth:30.0 circleBorderWidth:2 withTipText:@"" tipFont:[UIFont systemFontOfSize:12.0] tipColor:HEXCOLOR(0x666666)];
+        CGFloat width = 40;
+        CGFloat x = (self.bounds.size.width - width) / 2.0;
+        CGFloat y = (self.bounds.size.height - width) / 2.0;//self.bounds
+        _loadingView = [TWBDPlayerLoadingView loadingViewWithFrame:CGRectMake(x, y, width, width) circleBgColor:HEXACOLOR(0xffffff, 0.3) circleColor:[TWBDPlayerConfig sharedInstance].themeColor circleWidth:30 lineWidth:6];
         self.isDisplayedLoadingView = NO;
     }
     return _loadingView;

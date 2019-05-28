@@ -32,8 +32,6 @@
 @property (nonatomic, assign) BOOL isLocked;
 
 @property (nonatomic, weak) NSTimer *timer;
-
-@property (nonatomic, strong) NSArray *speedArr;
 @property (nonatomic, assign) NSInteger currentSpeedLevel;
 @end
 
@@ -219,7 +217,7 @@ static CGFloat bottomHeight = 40.0;
     
     [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.topContrainerView).offset(fringeMargin + edgeMargin);
-        make.centerY.equalTo(self.topContrainerView).offset(fringeMargin / 2.0);;
+        make.centerY.equalTo(self.topContrainerView).offset(fringeMargin / 2.0);
         make.width.height.equalTo(@32);
     }];
     [self.speedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -314,8 +312,8 @@ static CGFloat bottomHeight = 40.0;
 - (UIButton *)lockBtn {
     if (!_lockBtn) {
         _lockBtn = [[UIButton alloc] init];
-        [_lockBtn setImage:[UIImage bd_imageNamed:@"btn_video_unlock"] forState:UIControlStateNormal];
-        [_lockBtn setImage:[UIImage bd_imageNamed:@"btn_video_lock"] forState:UIControlStateSelected];
+        [_lockBtn setImage:[UIImage bd_imageNamed:@"btn_player_unlock"] forState:UIControlStateNormal];
+        [_lockBtn setImage:[UIImage bd_imageNamed:@"btn_player_lock"] forState:UIControlStateSelected];
         [_lockBtn addTarget:self action:@selector(lockBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         _lockBtn.hidden = [TWBDPlayerConfig sharedInstance].hideLockBtn;
     }
@@ -324,7 +322,7 @@ static CGFloat bottomHeight = 40.0;
 - (UIButton *)backBtn {
     if (!_backBtn) {
         _backBtn = [[UIButton alloc] init];
-        [_backBtn setImage:[UIImage bd_imageNamed:@"btn_video_back"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage bd_imageNamed:@"btn_player_back"] forState:UIControlStateNormal];
         [_backBtn addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _backBtn;
@@ -351,8 +349,8 @@ static CGFloat bottomHeight = 40.0;
 - (UIButton *)playBtn {
     if (!_playBtn) {
         _playBtn = [[UIButton alloc] init];
-        [_playBtn setImage:[UIImage bd_imageNamed:@"btn_video_play"] forState:UIControlStateNormal];
-        [_playBtn setImage:[UIImage bd_imageNamed:@"btn_video_pause"] forState:UIControlStateSelected];
+        [_playBtn setImage:[UIImage bd_imageNamed:@"btn_player_play"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage bd_imageNamed:@"btn_player_pause"] forState:UIControlStateSelected];
         [_playBtn addTarget:self action:@selector(playBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _playBtn;
@@ -369,11 +367,9 @@ static CGFloat bottomHeight = 40.0;
 - (UISlider *)slider {
     if (!_slider) {
         _slider = [[UISlider alloc] init];
-        if ([TWBDPlayerConfig sharedInstance].sliderTinColor) {
-            _slider.minimumTrackTintColor = [TWBDPlayerConfig sharedInstance].sliderTinColor;
-        }
-        _slider.maximumTrackTintColor = [UIColor whiteColor];
-        [_slider setThumbImage:[UIImage bd_imageNamed:@"btn_video_slider"] forState:UIControlStateNormal];
+        _slider.minimumTrackTintColor = [TWBDPlayerConfig sharedInstance].themeColor;
+        _slider.maximumTrackTintColor = HEXACOLOR(0xffffff, 0.5);
+        [_slider setThumbImage:[UIImage bd_imageNamed:@"btn_player_slider_circle"] forState:UIControlStateNormal];
         _slider.value = 0;
         self.slider.minimumValue = 0.0;
         self.slider.maximumValue = 1.0;
@@ -394,8 +390,8 @@ static CGFloat bottomHeight = 40.0;
 - (UIButton *)fullScreenBtn {
     if (!_fullScreenBtn) {
         _fullScreenBtn =  [[UIButton alloc] init];
-        [_fullScreenBtn setImage:[UIImage bd_imageNamed:@"btn_video_full_screen"] forState:UIControlStateNormal];
-        [_fullScreenBtn setImage:[UIImage bd_imageNamed:@"btn_video_small_screen"] forState:UIControlStateSelected];
+        [_fullScreenBtn setImage:[UIImage bd_imageNamed:@"btn_player_fullscreen"] forState:UIControlStateNormal];
+        [_fullScreenBtn setImage:[UIImage bd_imageNamed:@"btn_player_smallscreen"] forState:UIControlStateSelected];
         [_fullScreenBtn addTarget:self action:@selector(fullScreenBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         _fullScreenBtn.hidden = [TWBDPlayerConfig sharedInstance].hideFullScreenBtn;
     }
@@ -411,13 +407,6 @@ static CGFloat bottomHeight = 40.0;
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     }
     return _timer;
-}
-
-- (NSArray *)speedArr {
-    if (!_speedArr) {
-        _speedArr = @[@"1.0X", @"1.2X", @"1.4X", @"1.6X", @"1.8X", @"2.0X"];
-    }
-    return _speedArr;
 }
 
 #pragma mark - Setter
@@ -487,7 +476,7 @@ static CGFloat bottomHeight = 40.0;
 
 - (void)setCurrentSpeedLevel:(NSInteger)currentSpeedLevel {
     _currentSpeedLevel = currentSpeedLevel;
-    NSString *speedStr = [self.speedArr objectAtIndex:currentSpeedLevel % 6];
+    NSString *speedStr = [[TWBDPlayerConfig sharedInstance].speedArr objectAtIndex:currentSpeedLevel % 6];
     [self.speedBtn setTitle:speedStr forState:UIControlStateNormal];
 }
 

@@ -19,8 +19,12 @@
 @property (nonatomic, strong) NSString *videoPlaceholderImgUrl;
 
 @property (nonatomic, strong) UIImage *videoPlaceholderImg;
+///主题色
+@property (nonatomic, strong) UIColor *themeColor;
+///倍速
+@property (nonatomic, strong) NSArray *speedArr;
 
-@property (nonatomic, strong) UIColor *sliderTinColor;
+//@property (nonatomic, strong) UIColor *sliderTinColor;
 
 @property (nonatomic, assign) BOOL hideLockBtn;
 
